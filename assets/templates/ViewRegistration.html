@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block contents%}
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12">
+      <h3>Corona Users</h3>
+        <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Hall Ticket</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.studentName}}</td>
+                        <td>{{i.Hallticket}}</td>
+                        <td>{{i.Mobile}}</td>
+                        <td>{{i.Email}}</td>
+                        <td>{{i.Address}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+    </div>
+
+  </div>
+</div>
+{%endblock%}

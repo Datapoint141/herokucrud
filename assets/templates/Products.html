@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%block contents%}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-8">
+      <h3>DPH Product Add List</h3>
+      {{msg}}
+        <form action="{%url 'productviews'%}" class="was-validated" method="post">
+            {%csrf_token%}
+  <div class="form-group">
+    <label for="uname">Product Name:</label>
+   {{form.pname}}
+  </div>
+            <div class="form-group">
+    <label for="uname">Enter Product Price:</label>
+    {{form.price}}
+  </div>
+            <div class="form-group">
+    <label for="uname">Enter Quantity</label>
+   {{form.quantity}}
+  </div>
+            <div class="form-group">
+    <label for="uname">Product Category</label>
+   {{form.category}}
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    </div>
+
+  </div>
+</div>
+{%endblock%}

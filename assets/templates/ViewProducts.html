@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block contents%}
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12">
+      <h3>DPH Products</h3>
+        <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Category</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.pname}}</td>
+                        <td>{{i.price}}</td>
+                        <td>{{i.quantity}}</td>
+                        <td>{{i.category}}</td>
+
+
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+    </div>
+
+  </div>
+</div>
+{%endblock%}
